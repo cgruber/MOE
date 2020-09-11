@@ -6,8 +6,8 @@ RULES_KOTLIN_VERSION = "legacy-1.4.0-rc3"
 RULES_KOTLIN_SHA = "da0e6e1543fcc79e93d4d93c3333378f3bd5d29e82c1bc2518de0dbe048e6598"
 
 
-MAVEN_REPOSITORY_RULES_VERSION = "2.0.0-alpha-3"
-MAVEN_REPOSITORY_RULES_SHA = "853976a2e4908f010568aad8f47b1a1e87e258f33b114e6e92599dc2779938c4"
+MAVEN_REPOSITORY_RULES_VERSION = "2.0.0-alpha-4"
+MAVEN_REPOSITORY_RULES_SHA = "a6484fec8d1aebd4affff7ae1ee9b59141858b2c636222bdb619526ccd8b3358"
 KOTLIN_VERSION = "1.3.72"
 KOTLINC_ROOT = "https://github.com/JetBrains/kotlin/releases/download"
 KOTLINC_URL = "{root}/v{v}/kotlin-compiler-{v}.zip".format(root = KOTLINC_ROOT, v = KOTLIN_VERSION)
@@ -65,9 +65,11 @@ maven_repository_specification(
         "com.google.errorprone:error_prone_annotations:2.3.1": { "insecure": True },
         "com.google.errorprone:javac-shaded:9+181-r4173-1": { "insecure": True },
         "com.google.googlejavaformat:google-java-format:1.6": { "insecure": True },
-        "com.google.guava:guava:27.0.1-jre": { "insecure": True },
+        "com.google.guava:guava:27.0.1-jre": {
+            "insecure": True,
+            "exclude": ["com.google.guava:listenablefuture"],
+        },
         "com.google.guava:failureaccess:1.0.1": { "insecure": True },
-        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava": { "insecure": True },
         "com.google.j2objc:j2objc-annotations:1.1": { "insecure": True },
         "com.google.truth:truth:0.42": { "insecure": True },
         "com.googlecode.java-diff-utils:diffutils:1.3.0": { "insecure": True },
